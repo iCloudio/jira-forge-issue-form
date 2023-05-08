@@ -1,0 +1,31 @@
+modules:
+  jira:adminPage:
+    - key: testplugincb-hello-world-admin-page
+      function: main
+      title: Test Plugin CB
+      label: Descrizione del tuo plugin
+      icon: https://claudiob25.github.io/images/imgOnda.png
+  jira:issuePanel:
+    - key: testplugincb-issue-panel
+      function: panel
+      title: Crea Rapportino CB
+      label: Form Data CB
+      icon: https://claudiob25.github.io/images/imgOnda.png
+      description: Descrizione operazioni svolte dal plugin
+  function:
+    - key: main
+      handler: index.run
+    - key: panel
+      handler: panel.run
+app:
+  id: ari:cloud:ecosystem::app/ad442f26-ad41-4668-8871-d546e4ab9eda
+permissions:
+  scopes:
+    - read:jira-user
+    - storage:app
+    - read:jira-work
+  external:
+    fetch:
+      backend:
+        - api.db-ip.com
+        - httpbin.org
